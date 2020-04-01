@@ -33,9 +33,9 @@ namespace database
                 cmd.Parameters.AddWithValue("@recieve_date", TextBox5.Text);
                 cmd.Parameters.AddWithValue("@Cust_ID", TextBox6.Text);
                 cmd.Parameters.AddWithValue("@emp_ID", TextBox7.Text);
-                cmd.Parameters.AddWithValue("@startofweek", TextBox8.Text);
-                cmd.Parameters.AddWithValue("@Delivery_unit", TextBox9.Text);
-                cmd.Parameters.AddWithValue("@supervisor", TextBox10.Text);
+                cmd.Parameters.AddWithValue("@startofweek", TextBox10.Text);
+                cmd.Parameters.AddWithValue("@Delivery_unit", DropDownList3.SelectedValue);
+                cmd.Parameters.AddWithValue("@supervisor", TextBox9.Text);
 
 
                 con.Open();
@@ -47,7 +47,7 @@ namespace database
                 TextBox5.Text = "";
                 TextBox6.Text = "";
                 TextBox7.Text = "";
-                TextBox8.Text = "";
+                
                 TextBox9.Text = "";
                 TextBox10.Text = "";
             }

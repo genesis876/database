@@ -96,13 +96,13 @@ namespace database
         protected global::System.Web.UI.WebControls.TextBox TextBox10;
 
         /// <summary>
-        /// TextBox8 control.
+        /// DropDownList3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
 
         /// <summary>
         /// TextBox9 control.

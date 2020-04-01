@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="client.aspx.cs" Inherits="database.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    
     <h3>Client Information</h3>
 <h3>&nbsp;</h3>
     <div>
 
         <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="Cust_ID">
             <Columns>
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="Cust_ID" HeaderText="Cust_ID" ReadOnly="True" SortExpression="Cust_ID" />
                 <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                 <asp:BoundField DataField="clientRefID" HeaderText="clientRefID" SortExpression="clientRefID" />
@@ -68,7 +69,7 @@
         </table>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insert" />
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:groupworkConnectionString2 %>" DeleteCommand="DELETE FROM [Client] WHERE [Cust_ID] = @Cust_ID" InsertCommand="INSERT INTO [Client] ([Cust_ID], [name], [clientRefID], [email], [discount], [parish], [contact_num], [street_num], [street_name]) VALUES (@Cust_ID, @name, @clientRefID, @email, @discount, @parish, @contact_num, @street_num, @street_name)" SelectCommand="SELECT * FROM [Client]" UpdateCommand="UPDATE [Client] SET [name] = @name, [clientRefID] = @clientRefID, [email] = @email, [discount] = @discount, [parish] = @parish, [contact_num] = @contact_num, [street_num] = @street_num, [street_name] = @street_name WHERE [Cust_ID] = @Cust_ID">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:groupworkConnectionString %>" DeleteCommand="DELETE FROM [Client] WHERE [Cust_ID] = @Cust_ID" InsertCommand="INSERT INTO [Client] ([Cust_ID], [name], [clientRefID], [email], [discount], [parish], [contact_num], [street_num], [street_name]) VALUES (@Cust_ID, @name, @clientRefID, @email, @discount, @parish, @contact_num, @street_num, @street_name)" SelectCommand="SELECT * FROM [Client]" UpdateCommand="UPDATE [Client] SET [name] = @name, [clientRefID] = @clientRefID, [email] = @email, [discount] = @discount, [parish] = @parish, [contact_num] = @contact_num, [street_num] = @street_num, [street_name] = @street_name WHERE [Cust_ID] = @Cust_ID">
             <DeleteParameters>
                 <asp:Parameter Name="Cust_ID" Type="Int32" />
             </DeleteParameters>

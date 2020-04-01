@@ -65,7 +65,10 @@
             <tr>
                 <td style="width: 310px">Delivery unit</td>
                 <td>
-                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+                         <asp:ListItem>Ludies</asp:ListItem>
+                         <asp:ListItem>Catalans</asp:ListItem>
+                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>

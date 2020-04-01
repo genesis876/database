@@ -14,7 +14,7 @@
                 <asp:BoundField DataField="industry_category" HeaderText="industry_category" SortExpression="industry_category" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:groupworkConnectionString2 %>" DeleteCommand="DELETE FROM [Corporate] WHERE [Cust_ID] = @Cust_ID" InsertCommand="INSERT INTO [Corporate] ([Cust_ID], [num_of_employees], [primary_contact], [industry_category]) VALUES (@Cust_ID, @num_of_employees, @primary_contact, @industry_category)" SelectCommand="SELECT * FROM [Corporate]" UpdateCommand="UPDATE [Corporate] SET [num_of_employees] = @num_of_employees, [primary_contact] = @primary_contact, [industry_category] = @industry_category WHERE [Cust_ID] = @Cust_ID">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:groupworkConnectionString %>" DeleteCommand="DELETE FROM [Corporate] WHERE [Cust_ID] = @Cust_ID" InsertCommand="INSERT INTO [Corporate] ([Cust_ID], [num_of_employees], [primary_contact], [industry_category]) VALUES (@Cust_ID, @num_of_employees, @primary_contact, @industry_category)" SelectCommand="SELECT * FROM [Corporate]" UpdateCommand="UPDATE [Corporate] SET [num_of_employees] = @num_of_employees, [primary_contact] = @primary_contact, [industry_category] = @industry_category WHERE [Cust_ID] = @Cust_ID">
             <DeleteParameters>
                 <asp:Parameter Name="Cust_ID" Type="Int32" />
             </DeleteParameters>
