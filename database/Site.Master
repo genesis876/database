@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="database.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Postalicious</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Postalicious</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                    
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  runat="server" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tables
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" runat="server">
+          <a class="dropdown-item" runat="server" href="Corporate.aspx">Corporate Clients</a> <br/>
+          <a class="dropdown-item" runat="server" href="Personal.aspx">personal Clients</a> <br/>
+          <a class="dropdown-item" runat="server" href="client.aspx">All Client</a> <br/>
+          <a class="dropdown-item" runat="server" href="Package.aspx">Packages</a> <br/>
+            <a class="dropdown-item" runat="server" href="Mial.aspx">Mail</a> <br/>
+            <a class="dropdown-item" runat="server" href="postal item.aspx">Postal Items</a> <br/>
+            <a class="dropdown-item" runat="server" href="Postman.aspx">Post men</a> <br/>
+            <a class="dropdown-item" runat="server" href="return.aspx">Returns</a> <br/>
+        </div>
+      </li>
+
+                        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  runat="server" id="A1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          View
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" runat="server">
+          <a class="dropdown-item" runat="server" href="view1.aspx">Successful Deliveries by each Unit</a> <br/>
+          <a class="dropdown-item" runat="server" href="view2.aspx">Deliveries by each mail man</a> <br/>
+          <a class="dropdown-item" runat="server" href="view3.aspx">Amount of each delivery time category used by clients</a> <br/>
+        </div>
+      </li>
+                        
+
+                        
+                        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  runat="server" id="adminLink" visible="false" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Operations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" runat="server">
+          <a class="dropdown-item" runat="server"  href="~/Admin/trans.aspx">Assign a post item to a mailman</a> <br/>
+          <a class="dropdown-item" runat="server"  href="~/Admin/trans2.aspx">Assign a mailman to a supervisor</a> <br/>
+          <a class="dropdown-item" runat="server"  href="~/Admin/trans1.aspx">Record an Order</a> <br/>
+             <a class="dropdown-item" runat="server"  href="~/Admin/sp3.aspx">Find client according to package details</a> <br/>
+          <a class="dropdown-item" runat="server"   href="/Admin/sp5.aspx">Determine type of client</a> <br/>
+          
+        </div>
+      </li>
+
+
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Postalicous Application</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
