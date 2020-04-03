@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using Microsoft.AspNet.Identity;
+using System.Data;
 
 namespace database
 {
@@ -13,12 +14,11 @@ namespace database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataBind();
+           
 
         }
-
         
-            protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
             {
 
                 SqlConnection con = new SqlConnection("Data Source=LAPTOP-8UC2HRMR;Initial Catalog=groupwork;Integrated Security=True");
@@ -40,5 +40,7 @@ namespace database
 
 
             }
+
+       
         }
     }
